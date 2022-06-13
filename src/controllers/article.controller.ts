@@ -1,12 +1,10 @@
 import { 
 	Controller, 
-	// UseInterceptor, 
 	Get, 
 	Post,
   Put,
   Delete,
 	Param,
-	// Action,
 	Body
 } from 'routing-controllers';
 import 'reflect-metadata';
@@ -17,28 +15,28 @@ import { Info } from '../models/info';
 // 	console.log('change response...');
 // 	return content;
 // })
-export class UserController {
-  @Get('/users/')
+export class ArticleController {
+  @Get('/articles/')
 	getAll () {
 		return 'This action returns user wadaw #';
 	}
 
-  @Get('/users/:id')
+  @Get('/articles/:id')
 	getOne (@Param('id') id: number) {
 		return 'This action returns user wadaw #' + id;
 	}
 
-  @Post('/users/')
+  @Post('/articles/')
   create (@Body() data: Info) {
   	console.log(JSON.stringify(data));
   }
 
-  @Put('/users/:id')
+  @Put('/articles/:id')
   update (@Param('id') id: number, @Body() data: Info) {
   	console.log(JSON.stringify(data));
   }
 
-  @Delete('/users/:id')
+  @Delete('/articles/:id')
   remove (@Param('id') id: number) {
   	console.log();
   }
